@@ -5,12 +5,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { WishesModule } from './wishes/wishes.module';
+import { UploadsModule } from './uploads/uploads.module';
 
 @Module({
   imports: [ConfigModule.forRoot(), 
     MongooseModule.forRoot(
       `mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_DATABASE}`
-      ), UsersModule, WishesModule],
+      ), UsersModule, WishesModule, UploadsModule],
   controllers: [AppController],
   providers: [AppService],
 })
