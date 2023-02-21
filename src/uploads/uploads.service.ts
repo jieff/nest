@@ -14,8 +14,8 @@ export class UploadsService {
         return this.uploadModel.find().exec();
       }
     
-      async criar(upload: Upload): Promise<Upload> {
-        const uploadCreate = new this.gatoModel(upload);
+      async create(upload: Upload): Promise<Upload> {
+        const uploadCreate = new this.uploadModel(upload);
     
         return uploadCreate.save();
       }
@@ -25,11 +25,11 @@ export class UploadsService {
       }
     
       async update(id: string, update: Upload): Promise<Upload> {
-        return this.uploadModel.findByIdAndUpdate(id, upload).exec();
+        return this.uploadModel.findByIdAndUpdate(id, update).exec();
       }
     
       async remove(id: string) {
-        const uploadRemove = this.gatoModel.findOneAndDelete({ _id: id }).exec();
+        const uploadRemove = this.uploadModel.findOneAndDelete({ _id: id }).exec();
     
         return (await uploadRemove).remove();
       }

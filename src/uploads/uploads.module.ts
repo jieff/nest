@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Upload, UploadSchema } from './upload/upload';
 import { UploadsService } from './uploads.service';
+import { UploadsController } from './uploads.controller';
 
 @Module({
     imports: [
@@ -13,7 +14,7 @@ import { UploadsService } from './uploads.service';
         ])
 ],
 exports: [],
-controllers: [],
+controllers: [UploadsController],
 providers: [UploadsService]
 })
 
