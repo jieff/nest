@@ -8,10 +8,10 @@ import { WishesModule } from './wishes/wishes.module';
 import { UploadsModule } from './uploads/uploads.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), 
-    MongooseModule.forRoot(
-      `mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_DATABASE}`
-      ), UsersModule, WishesModule, UploadsModule],
+  //imports: [ConfigModule.forRoot(), 
+  //  MongooseModule.forRoot(
+  //    `mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_DATABASE}`
+  //    ), UsersModule, WishesModule, UploadsModule],
   controllers: [AppController],
   providers: [AppService],
 })
