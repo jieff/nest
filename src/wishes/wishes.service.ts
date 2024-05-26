@@ -9,7 +9,6 @@ export class WishesService{
     constructor(
         @InjectModel(Wish.name) private wishModel: Model<Wish>
     ) {}
-    // teste
     async getAll(): Promise<Wish[]> {
         return this.wishModel.find().exec();
       }
