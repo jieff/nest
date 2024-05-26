@@ -60,5 +60,5 @@ jobs:
             docker stop $COMMIT_HASH || true
             docker rm $COMMIT_HASH || true
 
-            # Iniciar um novo contêiner com o nome do commit (apenas os 7 primeiros dígitos) e a imagem atualizada
-            docker run -d --name $COMMIT_HASH -p 3000:3000 jieffcavalcanti/nest:latest
+            # Iniciar um novo contêiner com o nome do commit e a imagem atualizada
+            docker run -d --name $COMMIT_HASH -p 5000:3000 jieffcavalcanti/nest:latest
