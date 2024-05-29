@@ -54,11 +54,11 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             # Atualizar a imagem Docker
-            docker pull jieffcavalcanti/nest:latest
+            docker pull jieffcavalcanti/nest:$COMMIT_HASH
 
             # Parar e remover o contêiner existente
             docker stop $COMMIT_HASH || true
             docker rm $COMMIT_HASH || true
 
             # Iniciar um novo contêiner com o nome do commit e a imagem atualizada
-            docker run -d --name $COMMIT_HASH -p 5000:3000 jieffcavalcanti/nest:latest
+            docker run -d --name $COMMIT_HASH -p 5000:3000 jieffcavalcanti/nest:$COMMIT_HASH
