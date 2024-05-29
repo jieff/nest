@@ -8,7 +8,7 @@ export class WishesController {
         private readonly wishesService: WishesService
     ) {}
 
-    //teste 1 
+    //teste 1 2
     @Get()
     async getAll(): Promise<Wish[]> {
       return this.wishesService.getAll();
