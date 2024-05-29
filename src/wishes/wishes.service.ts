@@ -12,7 +12,7 @@ export class WishesService{
     async getAll(): Promise<Wish[]> {
         return this.wishModel.find().exec();
       }
-    //teste 4
+    //teste 5
       async create(wish: Wish): Promise<Wish> {
         const wishCreate = new this.wishModel(wish);
     
